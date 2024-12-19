@@ -1,0 +1,71 @@
+﻿@model List<Yummy_2.Models.Category>
+
+@{
+    int count = 0;
+    int count1 = 0;
+}
+
+<section id="menu" class="menu section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Menulerimiz</h2>
+        <p><span>Check Our</span> <span class="description-title">Yummy Menu</span></p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+        <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            @foreach(var item in Model)
+            {
+                count++;
+
+                <li class="nav-item">
+                    <a class="nav-link @(count==1 ? "active show": "")" data-bs-toggle="tab" data-bs-target="#menu-@item.CategoryId">
+                        <h4>@item.CategoryName</h4>
+                     </a>
+                 </li><!-- End tab nav item -->
+            }
+
+
+         <!-- End tab nav item -->
+
+        </ul>
+
+        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+            @foreach(var item in Model)
+             {
+                        count1++;
+                <div class="tab-pane fade @(count1==1 ? "active show": "")" id="menu-@item.CategoryId">
+
+                    <div class="tab-header text-center">
+                        <p>Menu</p>
+                        <h3>@item.CategoryName</h3>
+                    </div>
+
+                    <div class="row gy-5">
+                        @foreach(var product in item.Products)
+                        {
+                            <div class="col-lg-4 menu-item">
+                                <a href="~/Templates/yummy-red-1.0.0/assets/img/menu/menu-item-1.png" class="glightbox"><img src="~/Templates/yummy-red-1.0.0/assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
+                                <h4>@product.ProductName</h4>
+                                <p class="ingredients">
+                                   @product.Ingredients
+                                </p>
+                                <p class="price">
+                                    ₺ @product.Price
+                                </p>
+                            </div><!-- Menu Item -->
+
+                        }
+                    </div>
+                </div><!-- End Starter Menu Content -->
+             }
+
+            
+
+        </div>
+
+    </div>
+
+</section>

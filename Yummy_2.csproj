@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\FeatureController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -145,8 +146,13 @@
     <Compile Include="Migrations\202412181546097_updateFeature_Entity.Designer.cs">
       <DependentUpon>202412181546097_updateFeature_Entity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202412191923561_Added_Admin.cs" />
+    <Compile Include="Migrations\202412191923561_Added_Admin.Designer.cs">
+      <DependentUpon>202412191923561_Added_Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\About.cs" />
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Chef.cs" />
@@ -352,6 +358,8 @@
     <Content Include="Views\Feature\Index.cshtml" />
     <Content Include="Views\Feature\Create.cshtml" />
     <Content Include="Views\Feature\Update.cshtml" />
+    <Content Include="Views\DashBoard\Index.cshtml" />
+    <Content Include="Views\Default\DefaultCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -392,6 +400,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202412181546097_updateFeature_Entity.resx">
       <DependentUpon>202412181546097_updateFeature_Entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412191923561_Added_Admin.resx">
+      <DependentUpon>202412191923561_Added_Admin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

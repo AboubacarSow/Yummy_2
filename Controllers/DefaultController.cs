@@ -23,5 +23,9 @@ namespace Yummy_2.Controllers
         {
             return PartialView(_dbContext.Abouts.ToList());
         }
+        public PartialViewResult DefaultCategory()
+        {
+            return PartialView(_dbContext.Categories.ToList()); 
+        }
     }
 }
