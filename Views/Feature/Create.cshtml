@@ -1,0 +1,33 @@
+﻿@model Yummy_2.Models.Feature
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+}
+<div class="container">
+    <div class="py-3">
+        <h2 class="text-center display-6"> <i class="fa fa-plus me-2"></i>Öne Çıkan Alanı Oluşturma</h2>
+    </div>
+
+    <form method="post">
+
+        <label class="form-label fw-bold"> Başlık</label>
+        @Html.TextBoxFor(f => f.Title, new { @class = "form-control my-1" })
+        <div class="text-danger"> @Html.ValidationMessageFor(f => f.Title)</div>
+        <label class="form-label fw-bold"> Açıklama</label>
+        @Html.TextAreaFor(f => f.Description, new { @class = "form-control my-1" })
+        <div class="text-danger">@Html.ValidationMessageFor(f => f.Description)</div>
+        <label class="form-label fw-bold"> Resim Seçiniz</label>
+        @Html.TextBoxFor(f => f.ImageUrl, new { @class = "form-control my-1" })
+        <div class="text-danger"> @Html.ValidationMessageFor(f => f.ImageUrl)</div>
+
+        <label class="form-label fw-bold"> Video Yolu Giriniz</label>
+        @Html.TextBoxFor(f => f.VideoUrl, new { @class = "form-control my-1" })
+    <div class="text-danger"> @Html.ValidationMessageFor(f => f.VideoUrl)</div>
+       <br />
+        <button class="btn btn-primary my-2" > <i class="fa fa-plus"> </i>Kaydedin</button>
+
+    </form>
+
+</div>
+
+

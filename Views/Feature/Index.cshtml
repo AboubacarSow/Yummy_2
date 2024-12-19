@@ -1,0 +1,46 @@
+﻿@model List<Yummy_2.Models.Feature>
+@{
+    ViewBag.Title = "Features' List";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+    int count = 0;
+}
+<div class="py-3">
+    <h2 class="text-center display-6">Öne Çıkan Alanı </h2>
+</div>
+<div class="container">
+    <table class="table table-bordered table-striped rounded-2">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Resim</th>
+                <th>Başlık</th>
+                <th>Açıklama</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var feature in Model)
+                { count++;
+                    <tr>
+                        <th>@count</th>
+                        <td><img src="@feature.ImageUrl" style="width:70px; height:70px; border-radius:50%" /></td>
+                        <td>@feature.Title</td>
+                        <td>@feature.Description</td>
+                        <td class="text-nowrap"><a href="/Feature/Delete/@feature.FeatureId" class="btn btn-danger">
+                            <i class="fas fa-trash"></i>
+                            Sil</a></td>
+                        <td class="text-nowrap"><a href="/Feature/Update/@feature.FeatureId" class="btn btn-success">
+                            <i class="fas fa-pen-to-square"></i>
+                            Güncelle</a></td>
+                    </tr>
+                }
+        </tbody>
+    </table>
+
+    <a class="btn btn-outline-primary my-3" href="/Feature/Create">
+    <i class="fa fa-plus"></i>
+    Yenisi Oluştur</a>
+
+</div>
+
