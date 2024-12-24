@@ -21,6 +21,7 @@ namespace Yummy_2.Models
         public DbSet<PhotoGallery> PhotoGalleries { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Service> Services { get; set; }
+        public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
     }
 }

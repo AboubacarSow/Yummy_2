@@ -7,6 +7,7 @@ using Yummy_2.Models;
 
 namespace Yummy_2.Controllers
 {
+    [Authorize]
     public class FeatureController : Controller
     {
         YummyDbContext _dbContext = new YummyDbContext();   
