@@ -8,6 +8,7 @@ using Yummy_2.Models;
 
 namespace Yummy_2.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         YummyDbContext _dbContext=new YummyDbContext(); 

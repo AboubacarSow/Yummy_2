@@ -1,0 +1,108 @@
+﻿@model List<Yummy_2.Models.About>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+    int count = 0;
+
+}
+<style>
+    .titre {
+        width: 100%;
+        height: 60px;
+        background: rgb(242, 242, 242);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        box-shadow: 4px 4px 16px rgba(128, 128, 128,0.8);
+    }
+</style>
+<div class="container">
+    <div class="py-3 my-4 titre">
+        <h2 class="mx-3 fs-4">Hakkımızda </h2>
+    </div>
+    <table class="table table-bordered table-striped rounded-2">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Items</th>
+                <th>Açıklama</th>
+                <th>Telefon No</th>
+                <th>Resim 1</th>
+                <th>Resim 2</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var about in Model)
+            {
+                count++;
+                <tr>
+                    <th>@count</th>
+                    <td>
+                        <button type="button" class="btn btn-info text-nowrap text-light" data-bs-toggle="modal" data-bs-target="#item-@about.AboutId">
+                            Itemler Görüntüleyiniz
+                        </button>
+                    </td>
+                    <td>@about.Description</td>
+                    <td class="text-nowrap">@about.PhoneNumber</td>
+                    <td><img src="@about.ImageUrl" style="width:70px; height:70px; border-radius:50%" /></td>
+                    <td><img src="@about.ImageUrl_1" style="width:70px; height:70px; border-radius:50%" /></td>
+                    <td class="text-nowrap">
+                        <a href="/About/Delete/@about.AboutId" class="btn btn-danger">
+                            <i class="fas fa-trash"></i>
+                            Sil
+                        </a>
+                    </td>
+                    <td class="text-nowrap">
+                        <a href="/About/Update/@about.AboutId" class="btn btn-success">
+                            <i class="fas fa-pen-to-square"></i>
+                            Güncelle
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a class="btn btn-outline-primary my-3" href="/About/Create">
+        <i class="fa fa-plus"></i>
+        Yenisi Oluştur
+    </a>
+
+</div>
+@foreach (var about in Model)
+{
+    <div class="modal fade" id="item-@about.AboutId" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Itemler</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <h6 class="underline">Item 1</h6>
+                   <p class="text-secondary">@about.Item_1</p>
+                    <hr /> 
+                    <h6 class="underline">Item 2</h6>
+                   <p class="text-secondary">@about.Item_2</p>
+                    <hr /> 
+                    <h6 class="underline">Item 3</h6>
+                   <p class="text-secondary">@about.Item_3</p>
+            
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Kapat</button>
+                     <a href="/About/Update/@about.AboutId" class="btn btn-success">
+                         <i class="fas fa-pen-to-square"></i>
+                         Güncelle
+                     </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ }
+
+
+

@@ -1,0 +1,69 @@
+﻿@model List<Yummy_2.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+    int count = 0;
+}
+<style>
+    .titre {
+        width: 100%;
+        height: 60px;
+        background: rgb(242, 242, 242);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        box-shadow: 4px 4px 8px rgba(128, 128, 128,0.8), -4px 0 8px rgba(128, 128, 128,0.8);
+    }
+</style>
+<div class="container px-2">
+    <div class="py-3 my-4 titre">
+        <h2 class="mx-3 fs-4"> Ürünler</h2>
+    </div>
+    <table class="table table-bordered table-striped rounded-2">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th class="text-secondary">Ürün Adı</th>
+                <th class="text-secondary">Ürün Resmi</th>
+                <th class="text-secondary">İngredienler</th>
+                <th class="text-secondary">Fıyat</th>
+                <th class="text-secondary">Kategori Adı</th>
+                <th class="text-center text-secondary">Sil</th>
+                <th class="text-center text-secondary">Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                count++;
+                <tr>
+                    <th>@count</th>
+
+                    <td>@product.ProductName</td>
+                    <td><img src="@product.ImageUrl" style="width:70px; height:70px; border-radius:50%" /></td>
+                    <td>@product.Ingredients</td>
+                    <td>@product.Price</td>
+                    <td>@product.Category.CategoryName</td>
+                    <td class="text-nowrap text-center">
+                        <a href="/Product/Delete/@product.ProductId" class="btn btn-danger">
+                            <i class="fas fa-trash"></i>
+                            Sil
+                        </a>
+                    </td>
+                    <td class="text-nowrap text-center">
+                        <a href="/Product/Update/@product.ProductId" class="btn btn-success">
+                            <i class="fas fa-pen-to-square"></i>
+                            Güncelle
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a class="btn btn-outline-primary my-3" href="/Product/Create">
+        <i class="fa fa-plus"></i>
+        Yenisi Oluştur
+    </a>
+</div>
+

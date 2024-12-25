@@ -1,0 +1,63 @@
+﻿@model List<Yummy_2.Models.Category>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+    int count = 0;
+}
+
+
+<style>
+    .titre {
+        width: 100%;
+        height: 60px;
+        background: rgb(242, 242, 242);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        box-shadow: 4px 4px 8px rgba(128, 128, 128,0.8), -4px 0 8px rgba(128, 128, 128,0.8);
+    }
+</style>
+<div class="container px-5">
+    <div class="py-3 my-4 titre">
+        <h2 class="mx-3 fs-4"> Kategoriler</h2>
+    </div>
+    <table class="table table-bordered table-striped rounded-2">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Kategori Adı</th>
+                <th class="text-center">Sil</th>
+                <th class="text-center">Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cat in Model)
+            {
+                count++;
+                <tr>
+                    <th>@count</th>
+                   
+                    <td>@cat.CategoryName</td>
+                    <td class="text-nowrap text-center">
+                        <a href="/Category/Delete/@cat.CategoryId" class="btn btn-danger">
+                            <i class="fas fa-trash"></i>
+                            Sil
+                        </a>
+                    </td>
+                    <td class="text-nowrap text-center">
+                        <a href="/Category/Update/@cat.CategoryId" class="btn btn-success">
+                            <i class="fas fa-pen-to-square"></i>
+                            Güncelle
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a class="btn btn-outline-primary my-3" href="/Category/Create">
+        <i class="fa fa-plus"></i>
+        Yenisi Oluştur
+    </a>
+</div>
+

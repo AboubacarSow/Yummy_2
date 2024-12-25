@@ -13,13 +13,18 @@ namespace Yummy_2.Controllers
         // GET: DashBoard
         public ActionResult Index()
         {
+            GetDashBoardData();
+            return View();
+        }
+
+        private void GetDashBoardData()
+        {
             ViewBag.soupCount = _dbContext.Products.Count(c => c.Category.CategoryName == "Çorbalar");
-            ViewBag.mostExpensiveN = _dbContext.Products.OrderByDescending(p => p.Price).Select(p=>p.ProductName).FirstOrDefault();
-            ViewBag.mostExpensiveP= _dbContext.Products.OrderByDescending(p => p.Price).Select(p => p.Price).FirstOrDefault();
+            ViewBag.mostExpensiveN = _dbContext.Products.OrderByDescending(p => p.Price).Select(p => p.ProductName).FirstOrDefault();
+            ViewBag.mostExpensiveP = _dbContext.Products.OrderByDescending(p => p.Price).Select(p => p.Price).FirstOrDefault();
             ViewBag.lowerpriceN = _dbContext.Products.OrderBy(p => p.Price).Select(p => p.ProductName).FirstOrDefault();
             ViewBag.lowerpriceP = _dbContext.Products.OrderBy(p => p.Price).Select(p => p.Price).FirstOrDefault();
             ViewBag.averagPrice = _dbContext.Products.Average(p => p.Price).ToString();
-            return View();
         }
     }
 }
