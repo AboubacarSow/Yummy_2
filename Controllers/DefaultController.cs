@@ -28,5 +28,17 @@ namespace Yummy_2.Controllers
         {
             return PartialView(_dbContext.Categories.ToList()); 
         }
+        [HttpGet]
+        public PartialViewResult BookingTable()
+        {
+            return PartialView();
+        }
+        [HttpPost]
+        public PartialViewResult BookingTable(Booking booking)
+        {
+            _dbContext.Bookings.Add(booking);
+            _dbContext.SaveChanges();
+            return PartialView();
+        }
     }
 }

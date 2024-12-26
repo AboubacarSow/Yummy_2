@@ -1,0 +1,73 @@
+﻿@model List<Yummy_2.Models.Booking>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+    int count = 0;
+}
+
+<style>
+    .titre {
+        width: 100%;
+        height: 60px;
+        background: rgb(242, 242, 242);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        box-shadow: 4px 4px 8px rgba(128, 128, 128,0.8);
+    }
+</style>
+<div class="container px-5">
+    <div class="py-3 my-4 titre">
+        <h2 class="mx-3 fs-4"> Rezervasyonlar</h2>
+    </div>
+    @if (!(Model.Count == 0))
+     {
+
+    <table class="table table-bordered table-striped rounded-2">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th class="text-secondary">Adı</th>
+                <th class="text-secondary">Mail Adresi</th>
+                <th class="text-secondary">Telefon Numara</th>
+                <th class="text-secondary">Tarih</th>
+                <th class="text-secondary">Kişi Sayısı</th>
+                <th class="text-secondary">Mesaj İçeriği</th>
+                <th class="text-secondary">Durum</th>
+                <th class="text-center text-secondary">Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+             {
+                count++;
+                <tr>
+                    <th>@count</th>
+                    <td>@book.Name</td>
+                    <td>@book.Email</td>
+                    <td>@book.PhoneNumber</td>
+                    <td>@book.BookingDate</td>
+                    <td>@book.PersoneCount</td>
+                    <td>@book.MessageContent</td>
+                    <td><a href="/Booking/Approving/@book.BookingId" class="btn btn-info text-light">@(book.IsApproved==true ? "Onaylı" : "Henüz Onaylanmadı")</a></td>
+                    <td class="text-nowrap text-center">
+                        <a href="/Booking/Delete/@book.BookingId" class="btn btn-danger">
+                            <i class="fas fa-trash"></i>
+                            Sil
+                        </a>
+                    </td>
+                </tr>
+             }
+        </tbody>
+    </table>
+     }
+      else
+      {
+        <div class="bg-warning d-flex align-items-center px-2" style="width:100%;height:40px; border-radius:7px; opacity:0.7">
+            <p class="text-light fs-6"> Henüz Bir Rezervasyon Yok!</p>
+        </div>
+      }
+
+    
+</div>
+

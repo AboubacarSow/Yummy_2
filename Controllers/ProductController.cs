@@ -52,13 +52,13 @@ namespace Yummy_2.Controllers
         public ActionResult Update(Product product)
         {
             var value=_dbContext.Products.FirstOrDefault(p=>p.ProductId == product.ProductId);
-            var category=_dbContext.Categories.FirstOrDefault(p=>p.CategoryId == product.CategoryId);
-            value.Category=category;    
             if (!ModelState.IsValid)
             {
                 GetCategory();  
                 return View(product);
             }
+            var category=_dbContext.Categories.FirstOrDefault(p=>p.CategoryId == product.CategoryId);
+            value.Category=category;    
             value.ProductName = product.ProductName;    
             value.Price = product.Price;    
             value.ImageUrl = product.ImageUrl;  

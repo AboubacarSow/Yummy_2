@@ -128,7 +128,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ChefController.cs" />
+    <Compile Include="Controllers\ChefSocialMediaController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\FeatureController.cs" />
@@ -158,6 +162,10 @@
     <Compile Include="Migrations\202412241845195_table_socialMedia.cs" />
     <Compile Include="Migrations\202412241845195_table_socialMedia.Designer.cs">
       <DependentUpon>202412241845195_table_socialMedia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202412261630029_update_chefSocial.cs" />
+    <Compile Include="Migrations\202412261630029_update_chefSocial.Designer.cs">
+      <DependentUpon>202412261630029_update_chefSocial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\About.cs" />
@@ -500,9 +508,20 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\Create.cshtml" />
     <Content Include="Views\Product\Update.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Create.cshtml" />
+    <Content Include="Views\Admin\Update.cshtml" />
+    <Content Include="Views\Default\BookingTable.cshtml" />
+    <Content Include="Views\Booking\Index.cshtml" />
+    <Content Include="Views\Chef\Index.cshtml" />
+    <Content Include="Views\Chef\Create.cshtml" />
+    <Content Include="Views\Chef\Update.cshtml" />
+    <Content Include="Views\ChefSocialMedia\Index.cshtml" />
+    <Content Include="Views\ChefSocialMedia\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="assets\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -546,6 +565,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202412241845195_table_socialMedia.resx">
       <DependentUpon>202412241845195_table_socialMedia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412261630029_update_chefSocial.resx">
+      <DependentUpon>202412261630029_update_chefSocial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

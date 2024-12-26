@@ -1,0 +1,62 @@
+﻿@model List<Yummy_2.Models.ChefSocial>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+    int count = 0;
+}
+<style>
+    .titre {
+        width: 100%;
+        height: 60px;
+        background: rgb(242, 242, 242);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        box-shadow: 4px 4px 8px rgba(128, 128, 128,0.8);
+    }
+</style>
+<div class="container px-2">
+    <div class="py-3 my-4 titre">
+        <h2 class="mx-3 fs-4"> Chef'in Sosyal Mediaları</h2>
+    </div>
+    <table class="table table-bordered table-striped rounded-2">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th class="text-secondary">Adı</th>
+                <th class="text-secondary">İkon</th>
+                <th class="text-secondary">Chefi</th>
+                <th class="text-center text-secondary">Sil</th>
+                <th class="text-center text-secondary">Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var chef in Model)
+            {
+                count++;
+                <tr>
+                    <td>@count</td>
+                    <td class="text-nowrap">@chef.Name</td>
+                    <td><a href="@chef.Url"><i class="@chef.Icon"></i></a></td>
+                    <td>@chef.Chef.FullName</td>
+                    <td class="text-nowrap">
+                        <a href="/Chef/Delete/@chef.ChefId" class="btn btn-danger">
+                            <i class="fas fa-trash"></i>
+                            Sil
+                        </a>
+                    </td>
+                    <td class="text-nowrap">
+                        <a href="/Chef/Update/@chef.ChefId" class="btn btn-success">
+                            <i class="fas fa-edit"></i>
+                            Güncelle
+                        </a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+    <a href="/Chef/Create" class="btn btn-outline-primary"><i class="fas fa-plus"></i>Yeni Chef Ekle</a>
+</div>
+

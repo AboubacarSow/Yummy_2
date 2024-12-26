@@ -10,7 +10,8 @@ namespace Yummy_2.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Icon {  get; set; }   
-        public int ChefId {  get; set; }    
+        public int ChefId {  get; set; } 
+        public string Url { get; set; } 
         public virtual Chef Chef {  get; set; } 
     }
 }
