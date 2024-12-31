@@ -133,6 +133,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ChefController.cs" />
     <Compile Include="Controllers\ChefSocialMediaController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\FeatureController.cs" />
@@ -518,6 +519,8 @@
     <Content Include="Views\Chef\Update.cshtml" />
     <Content Include="Views\ChefSocialMedia\Index.cshtml" />
     <Content Include="Views\ChefSocialMedia\Create.cshtml" />
+    <Content Include="Views\ChefSocialMedia\Update.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

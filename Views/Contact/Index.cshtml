@@ -1,0 +1,60 @@
+﻿@model List<Yummy_2.Models.ContactInfo>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+    int count = 0;
+}
+
+<style>
+    .titre {
+        width: 100%;
+        height: 60px;
+        background: rgb(242, 242, 242);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        box-shadow: 4px 4px 8px rgba(128, 128, 128,0.8);
+    }
+</style>
+<div class="container px-2">
+    <div class="py-3 my-4 titre">
+        <h2 class="mx-3 fs-4"> İletişim Bilgi</h2>
+    </div>
+    <table class="table table-bordered table-striped rounded-2">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Adres</th>
+                <th>Mail Adresi</th>
+                <th>Telefon Numarası</th>
+                <th>Konu</th>
+                <th>Açık Saatleri</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var address in Model)
+             {
+                count++;
+                <tr>
+                    <td>@count</td>
+                    <td>@address.Address</td>
+                    <td>@address.Email</td>
+                    <td class="text-nowrap">@address.PhoneNumber</td>
+                    <td>@address.MapUrl</td>
+                    <td class="text-nowrap">@address.OpenHours</td>
+                    <td><a href="/Contact/Delete/@address.Id" class="btn btn-danger text-nowrap">
+                        <i class="fa fa-trash"></i>
+                        Sil</a>
+                    </td>
+                    <td><a href="/Contact/Update/@address.Id" class="btn btn-success text-nowrap">
+                        <i class="fa fa-plus"></i>
+                        Güncelle</a>
+                    </td>
+                </tr>
+             }
+        </tbody>
+    </table>
+</div>
+

@@ -1,9 +1,8 @@
 ﻿@model Yummy_2.Models.ChefSocial
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Update";
     Layout = "~/Views/Shared/_AdminUILayout.cshtml";
 }
-
 <style>
     .titre {
         width: 100%;
@@ -17,25 +16,26 @@
 </style>
 <div class="container px-5">
     <div class="py-3 my-4 titre">
-        <h2 class="mx-3 fs-4"> Social Media Ekleme</h2>
+        <h2 class="mx-3 fs-4"> Social Media Güncelleme</h2>
     </div>
     <div class="text-danger">@Html.ValidationSummary()</div>
     <form method="post">
         <label class="form-label my-1">Chef</label>
-        @Html.DropDownListFor(c=>c.ChefId, (List<SelectListItem>)ViewBag.Chefs, new { @class= "form-control"})
+        @Html.DropDownListFor(c => c.ChefId, (List<SelectListItem>)ViewBag.Chefs, new { @class = "form-control" })
         <label class="form-label my-2">Sosyal Medya Adı</label>
-        @Html.TextBoxFor(c=>c.Name, new { @class="form-control"}) 
-        
+        @Html.TextBoxFor(c => c.Name, new { @class = "form-control" })
+
         <label class="form-label my-2">İkon</label>
-        @Html.TextBoxFor(c=>c.Icon, new { @class="form-control"}) 
-        
+        @Html.TextBoxFor(c => c.Icon, new { @class = "form-control" })
+
         <label class="form-label my-2">Sosyal Medya Linki</label>
-        @Html.TextBoxFor(c=>c.Url, new { @class="form-control"})
+        @Html.TextBoxFor(c => c.Url, new { @class = "form-control" })
         <br />
 
-        <button class="btn btn-success"> <i class="fas fa-plus"></i>Ekle</button>
+        <button class="btn btn-success"> <i class="fas fa-plus"></i>Güncelle</button>
         <br />
 
     </form>
 </div>
+
 
