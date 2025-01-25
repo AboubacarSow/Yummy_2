@@ -20,7 +20,7 @@
         <h2 class="mx-3 fs-4"> Admin Oluşturma</h2>
     </div>
     <div class="text-danger">@Html.ValidationSummary()</div>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <label class="form-label">Kullanıcı Adı</label>
         @Html.TextBoxFor(K=>K.UserName, new { @class="form-control"})
 

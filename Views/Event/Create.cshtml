@@ -1,0 +1,22 @@
+﻿@model Yummy_2.Models.Event
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<div class="container px-2">
+    <div class="py-3 my-4 titre">
+        <h2 class="mx-3 fs-4"> Etkinlik Ekleme</h2>
+    </div>
+    <form method="post">
+        <label class="form-label">Başlık</label>
+        @Html.TextBoxFor(e=>e.Title, new {@class="form-control mb-2"})
+        <label class="form-label">Açıklama</label>
+        @Html.TextBoxFor(e=>e.Description, new {@class="form-control mb-2"})
+        <label class="form-label">Fıyat</label>
+        @Html.TextBoxFor(e=>e.Price, new {@class="form-control mb-2"})
+        <br />
+        <button type="submit" class="btn btn-primary"><i class="fa fa-plus me-2"></i>Ekle</button>
+    </form>
+</div>
+

@@ -1,0 +1,76 @@
+﻿@model List<Yummy_2.Models.Message>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+    int count = 0;
+}
+
+<div class="container">
+    <div class="py-3 my-4 titre">
+        <h2 class="mx-3 fs-4"> <i class="fa-solid fa-message me-2"></i>Gelen Mesajlar </h2>
+    </div>
+    <table class="table table-bordered table-striped rounded-2">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Adı</th>
+                <th>Mail</th>
+                <th>Konu</th>
+                <th>Mesaji</th>
+                <th>Durumu</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var message in Model)
+            {
+                count++;
+                <tr>
+                    <td>@count</td>
+                    <td>@message.Name</td>
+                    <td>@message.Email</td>
+                    <td>@message.Subject</td>
+                    <td>
+                        <button type="button" class="btn btn-info text-light" data-bs-toggle="modal"
+                                data-bs-target="#message-@message.MessageId">
+                           <i class="fa-solid fa-book-open"></i>
+                        </button>
+                    </td>
+                    <td>
+                        @if (!message.IsRead)
+                        {
+
+                            <a href="/Message/SetAsRead/@message.MessageId" class="btn btn-info text-light">Okundu İşaretle</a>
+                        }
+                        else
+                        {
+                            <span class="btn btn-warning"><i class="fa-solid fa-envelope-open-text"></i> Okunmuştur</span>
+                        }
+                    </td>
+                    <td><a href="/Message/Delete/@message.MessageId" class="btn btn-danger"><i class="fa fa-trash me-2"></i>Sil</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@foreach (var b in Model)
+{
+    <div class="modal fade" id="message-@b.MessageId" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">@b.Name</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+                </div>
+                <div class="modal-body">
+                    @b.MessageBody
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Kapat</button>
+                    <a href="/Message/SetAsRead/@b.MessageId" class="btn btn-success">Okundu İşaretle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

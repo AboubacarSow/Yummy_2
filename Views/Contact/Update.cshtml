@@ -1,0 +1,29 @@
+﻿@model Yummy_2.Models.ContactInfo
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+}
+
+
+<div class="container px-2">
+    <div class="py-3 my-4 titre">
+        <h2 class="mx-3 fs-4"> İletişim Bilgi Güncelleme</h2>
+    </div>
+    <form method="post">
+        <input type="hidden" value="@Model.Id" name="Id" />
+        <label class="form-label">Adres Bilgi</label>
+        @Html.TextBoxFor(c => c.Address, new { @class = "form-control mb-2" })
+        <label class="form-label">Mail</label>
+        @Html.TextBoxFor(c => c.Email, new { @class = "form-control mb-2" })
+        <label class="form-label">Telefon Numara</label>
+        @Html.TextBoxFor(c => c.PhoneNumber, new { @class = "form-control mb-2" })
+        <label class="form-label">Konu</label>
+        @Html.TextBoxFor(c => c.MapUrl, new { @class = "form-control mb-2" })
+        <label class="form-label">Açık Saatleri</label>
+        <input type="text" name="OpenHours" value="@Model.OpenHours" placeholder="00h-00h" class="form-control mb-2" />
+
+        <button type="submit" class="btn btn-success text-white"><i class="fa fa-edit"></i>Güncelle</button>
+
+    </form>
+</div>
+

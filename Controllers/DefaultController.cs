@@ -40,5 +40,21 @@ namespace Yummy_2.Controllers
             _dbContext.SaveChanges();
             return PartialView();
         }
+        public PartialViewResult Event()
+        {
+            return PartialView(_dbContext.Events.ToList());
+        }
+        [HttpGet]
+        public PartialViewResult SendMessage()
+        {
+            return PartialView();
+        }
+        [HttpPost]
+        public ActionResult SendMessage(Message message)
+        {
+            _dbContext.Messages.Add(message);
+            _dbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

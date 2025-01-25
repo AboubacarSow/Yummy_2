@@ -12,11 +12,7 @@ namespace Yummy_2.Controllers
     public class LoginController : Controller
     {
         YummyDbContext _dbContext=new YummyDbContext(); 
-        // GET: Login
-        public ActionResult Index()
-        {
-            return View();
-        }
+       
         [HttpGet]
         public ActionResult SignIn()
         {

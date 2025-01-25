@@ -26,11 +26,11 @@
                 <th>No.</th>
                 <th>Adres</th>
                 <th>Mail Adresi</th>
-                <th>Telefon Numarası</th>
+                <th>Tel Numarası</th>
                 <th>Konu</th>
-                <th>Açık Saatleri</th>
-                <th>Sil</th>
+                <th class="text-nowrap">Açık Saatleri</th>
                 <th>Güncelle</th>
+                <th>Sil</th>
             </tr>
         </thead>
         <tbody>
@@ -40,21 +40,26 @@
                 <tr>
                     <td>@count</td>
                     <td>@address.Address</td>
-                    <td>@address.Email</td>
+                    <td class="text-nowrap">@address.Email</td>
                     <td class="text-nowrap">@address.PhoneNumber</td>
-                    <td>@address.MapUrl</td>
+                    <td>@address.MapUrl.Substring(0,20)</td>
                     <td class="text-nowrap">@address.OpenHours</td>
-                    <td><a href="/Contact/Delete/@address.Id" class="btn btn-danger text-nowrap">
-                        <i class="fa fa-trash"></i>
-                        Sil</a>
-                    </td>
                     <td><a href="/Contact/Update/@address.Id" class="btn btn-success text-nowrap">
                         <i class="fa fa-plus"></i>
                         Güncelle</a>
+                    </td>
+                    <td><a href="/Contact/Delete/@address.Id" class="btn btn-danger text-nowrap">
+                        <i class="fa fa-trash"></i>
+                        Sil</a>
                     </td>
                 </tr>
              }
         </tbody>
     </table>
+
 </div>
+<a class="btn btn-outline-primary my-3" href="/Contact/Create">
+    <i class="fa fa-plus"></i>
+    Yeni İletişim Ekle
+</a>
 
