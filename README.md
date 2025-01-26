@@ -125,7 +125,7 @@
 <img src="screenshoots/img/YummyContactInfo.PNG" alt="Contact"/>
 
 ### Diagram 
-<img src="screenshoots/img/diagram.PNG" alt="Veri Tabanı Diagram"/>
+<img src="screenshoots/img/diagram1.PNG" alt="Veri Tabanı Diagram"/>
 
  Tabloları arasında ilişki gösterilmektedir.
 </body>
