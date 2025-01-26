@@ -1,0 +1,19 @@
+﻿@model Yummy_2.Models.PhotoGallery
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<div class="container">
+    <div class="py-3 my-4 titre">
+        <h2 class="mx-3 fs-4"> <i class="fa-solid fa-file-image me-2"></i>Gallery Güncelleme </h2>
+    </div>
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" value="@Model.Id" name="Id" />
+        <label class="form-label fw-bolder">Resim Yükeyiniz</label>
+        <input type="file" name="ImageFile" class="form-control" />
+        <br />
+        <button type="submit" class="btn btn-success"><i class="fa fa-edit me-2"></i>Güncelle</button>
+    </form>
+</div>
+

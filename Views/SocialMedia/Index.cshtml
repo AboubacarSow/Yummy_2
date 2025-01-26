@@ -1,42 +1,41 @@
-﻿@model List<Yummy_2.Models.ChefSocial>
+﻿@model List<Yummy_2.Models.SocialMedia>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminUILayout.cshtml";
     int count = 0;
 }
+
 <div class="container px-2">
     <div class="py-3 my-4 titre">
-        <h2 class="mx-3 fs-4"> Chef'in Sosyal Mediaları</h2>
+        <h2 class="mx-3 fs-4 "> <i class="fa-solid fa-globe me-2"></i>Sosyal Medyaları</h2>
     </div>
     <table class="table table-bordered table-striped rounded-2">
         <thead>
             <tr>
                 <th>No.</th>
-                <th class="text-secondary">Adı</th>
+                <th class="text-secondary">Başlık</th>
                 <th class="text-secondary">İkon</th>
-                <th class="text-secondary">Chefi</th>
                 <th class="text-center text-secondary">Sil</th>
                 <th class="text-center text-secondary">Güncelle</th>
             </tr>
         </thead>
         <tbody>
 
-            @foreach (var chef in Model)
+            @foreach (var social in Model)
             {
                 count++;
                 <tr>
                     <td>@count</td>
-                    <td class="text-nowrap">@chef.Name</td>
-                    <td><a href="@chef.Url"><i class="@chef.Icon"></i></a></td>
-                    <td>@chef.Chef.FullName</td>
+                    <td class="text-nowrap">@social.Title</td>
+                    <td class="text-nowrap"><a href="@social.Url" target="_blank"><i class="@social.Icon"></i>icon</a></td>
                     <td class="text-nowrap">
-                        <a href="/ChefSocialMedia/Delete/@chef.Id" class="btn btn-danger">
+                        <a href="/SocialMedia/Delete/@social.Id" class="btn btn-danger">
                             <i class="fas fa-trash"></i>
                             Sil
                         </a>
                     </td>
                     <td class="text-nowrap">
-                        <a href="/ChefSocialMedia/Update/@chef.Id" class="btn btn-success">
+                        <a href="/SocialMedia/Update/@social.Id" class="btn btn-success">
                             <i class="fas fa-edit"></i>
                             Güncelle
                         </a>
@@ -46,6 +45,5 @@
             }
         </tbody>
     </table>
-    <a href="/ChefSocialMedia/Create" class="btn btn-outline-primary"><i class="fas fa-plus"></i>Yeni Sosyal Media Hesabı Ekle</a>
+    <a href="/SocialMedia/Create" class="btn btn-outline-primary"><i class="fas fa-plus me-2"></i>Ekle</a>
 </div>
-

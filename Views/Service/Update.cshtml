@@ -1,0 +1,24 @@
+﻿@model Yummy_2.Models.Service
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<div class="container">
+    <div class="py-3 my-4 titre">
+        <h2 class="mx-3 fs-4">Hizmet Güncelleme </h2>
+    </div>
+    <form method="post">
+        <input type="hidden" value="@Model.ServiceId" name="ServiceId" />
+        <label class="form-label">Başlık</label>
+        @Html.TextBoxFor(s => s.Title, new { @class = "form-control mb-2" })
+        <label class="form-label">Açıklama</label>
+        @Html.TextBoxFor(s => s.Description, new { @class = "form-control mb-2" })
+        <label class="form-label">İkon</label>
+        @Html.TextBoxFor(s => s.Icon, new { @class = "form-control mb-2" })
+
+        <br />
+        <button type="submit" class="btn btn-success"> <i class="fa fa-edit me-2"></i> Güncelle</button>
+    </form>
+</div>
+

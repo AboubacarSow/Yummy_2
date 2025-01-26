@@ -1,0 +1,27 @@
+﻿@model Yummy_2.Models.SocialMedia
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<div class="container px-2">
+    <div class="py-3 my-4 titre">
+        <h2 class="mx-3 fs-4"> <i class="fa-solid fa-globe me-2"></i> Sosyal Medya Ekleme</h2>
+    </div>
+    <form method="post">
+        <p class="text-danger">@Html.ValidationSummary()</p>
+        <label class="form-label">Başlık</label>
+        @Html.TextBoxFor(s => s.Title, new { @class = "form-control mb-3" })
+
+        <label class="form-label">Url</label>
+        @Html.TextBoxFor(s => s.Url, new { @class = "form-control mb-3" })
+
+        <label class="form-label">İkon</label>
+        @Html.TextBoxFor(s => s.Icon, new { @class = "form-control mb-3" })
+
+        <br />
+        <button type="submit" class="btn btn-primary"> <i class="fa fa-plus me-2"></i> Ekle</button>
+
+    </form>
+</div>
+

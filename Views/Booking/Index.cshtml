@@ -5,22 +5,12 @@
     int count = 0;
 }
 
-<style>
-    .titre {
-        width: 100%;
-        height: 60px;
-        background: rgb(242, 242, 242);
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        box-shadow: 4px 4px 8px rgba(128, 128, 128,0.8);
-    }
-</style>
-<div class="container px-5">
+
+<div class="container px-3">
     <div class="py-3 my-4 titre">
-        <h2 class="mx-3 fs-4"> Rezervasyonlar</h2>
+        <h2 class="mx-3 fs-4"> <i class="fa-solid fa-utensils me-2"></i>Rezervasyonlar</h2>
     </div>
-    @if (!(Model.Count == 0))
+    @if (Model.Count != 0)
      {
 
     <table class="table table-bordered table-striped rounded-2">
@@ -31,7 +21,7 @@
                 <th class="text-secondary">Mail Adresi</th>
                 <th class="text-secondary">Telefon Numara</th>
                 <th class="text-secondary">Tarih</th>
-                <th class="text-secondary">Kişi Sayısı</th>
+                <th class="text-secondary text-nowrap">Kişi Sayısı</th>
                 <th class="text-secondary">Mesaj İçeriği</th>
                 <th class="text-secondary">Durum</th>
                 <th class="text-center text-secondary">Sil</th>
@@ -49,7 +39,16 @@
                     <td>@book.BookingDate</td>
                     <td>@book.PersoneCount</td>
                     <td>@book.MessageContent</td>
-                    <td><a href="/Booking/Approving/@book.BookingId" class="btn btn-info text-light">@(book.IsApproved==true ? "Onaylı" : "Henüz Onaylanmadı")</a></td>
+                    <td><a href="/Booking/Approving/@book.BookingId" class="btn btn-info">
+                        @if (book.IsApproved)
+                         {
+                        <span class="text-success">Onaylı</span>
+                         }
+                        else { 
+
+                        <span class="text-warning">Onaylanmadı</span>
+                        }
+                       </a></td>
                     <td class="text-nowrap text-center">
                         <a href="/Booking/Delete/@book.BookingId" class="btn btn-danger">
                             <i class="fas fa-trash"></i>

@@ -1,0 +1,18 @@
+﻿@model Yummy_2.Models.PhotoGallery
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<div class="container">
+    <div class="py-3 my-4 titre">
+        <h2 class="mx-3 fs-4"> <i class="fa-solid fa-file-image me-2"></i>Photo Gallery Ekleme </h2>
+    </div>
+    <form method="post" enctype="multipart/form-data">
+        <label class="form-label">Resim Yükeyiniz</label>
+        <input type="file" name="ImageFile" class="form-control" required />
+        <br />
+        <button type="submit" class="btn btn-primary" ><i class="fa fa-plus me-2"></i>Ekle</button>
+    </form>
+</div>
+

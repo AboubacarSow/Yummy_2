@@ -1,0 +1,69 @@
+﻿@model List<Yummy_2.Models.Testimonial>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+    int count = 0;
+}
+
+<div class="container px-2">
+    <div class="py-3 my-4 titre">
+        <h2 class="mx-3 fs-4"><i class="fa-brands fa-resolving me-2"></i> Referanslar</h2>
+    </div>
+    <table class="table table-bordered table-striped rounded-2">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Tam Adı</th>
+                <th>Başlık</th>
+                <th>Resim</th>
+                <th>Yorum</th>
+                <th>Değerlendirme</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var test in Model)
+            {
+                count++;
+                <tr>
+                    <td>@count</td>
+                    <td>@test.FullName</td>
+                    <td>@test.Title</td>
+                    <td><img src="@test.ImageUrl" style="width:70px;height:70px;border-radius:50%" /></td>
+                    <td>
+                        <button type="button" class="btn btn-info text-light" data-bs-toggle="modal"
+                                data-bs-target="#message-@test.TestimonialId">
+                            <i class="fa-solid fa-book-open"></i>
+                        </button>
+                    </td>
+                    <td>@test.Rating Yıldız</td>
+                    <td> <a href="/Testimonial/Delete/@test.TestimonialId" class="btn btn-danger"> <i class="fa fa-trash me-2"></i>Sil</a></td>
+                    <td> <a href="/Testimonial/Update/@test.TestimonialId" class="btn btn-success"> <i class="fa fa-edit me-2"></i>Güncelle</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Testimonial/Create" class="btn btn-primary"><i class="fa fa-plus me-2"></i> Ekle </a>
+</div>
+@foreach (var b in Model)
+{
+    <div class="modal fade" id="message-@b.TestimonialId" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">@b.FullName</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+                </div>
+                <div class="modal-body">
+                    @b.Comment
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Kapat</button>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
