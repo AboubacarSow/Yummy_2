@@ -20,5 +20,9 @@ namespace Yummy_2.Controllers
         {
             return PartialView(_dbContext.SocialMedias.ToList());
         }
+        public PartialViewResult ContactLayout()
+        {
+            return PartialView(_dbContext.ContactInfos.ToList());
+        }
     }
 }

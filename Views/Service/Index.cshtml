@@ -7,7 +7,7 @@
 
 <div class="container">
     <div class="py-3 my-4 titre">
-        <h2 class="mx-3 fs-4"> <i class="fa-solid fa-message me-2"></i>Hizmetlerimiz </h2>
+        <h2 class="mx-3 fs-4"> <i class="fa-solid fa-h me-2"></i>Hizmetlerimiz </h2>
     </div>
     <table class="table table-bordered table-striped rounded-2">
         <thead>
@@ -29,14 +29,14 @@
                 <td>@item.Title</td>
                 <td>@item.Description</td>
                 <td>@item.Icon</td>
-                <td><a href="/Service/Update/@item.ServiceId" class="btn btn-success"><i class="fa fa-edit me-2"></i>Güncelle</a> </td>
-                <td><a href="/Service/Delete/@item.ServiceId" class="btn btn-danger"><i class="fa fa-trash me-2"></i>Sil</a> </td>
+                <td class="text-nowrap"><a href="/Service/Update/@item.ServiceId" class="btn btn-success"><i class="fa fa-edit me-2"></i>Güncelle</a> </td>
+                <td class="text-nowrap"><a href="/Service/Delete/@item.ServiceId" class="btn btn-danger"><i class="fa fa-trash me-2"></i>Sil</a> </td>
             </tr>
         }
         </tbody>
     </table>
     <br />
 
-    <a href="/Service/Create" class="btn btn-primary" > <i class="fa fa-plus"></i>Ekle </a>
+    <a href="/Service/Create" class="btn btn-primary" > <i class="fa fa-plus me-2"></i>Ekle </a>
 </div>
 

@@ -1,0 +1,37 @@
+﻿@model List<Yummy_2.Models.ContactInfo>
+
+@foreach (var contact in Model)
+{
+    <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-geo-alt icon"></i>
+        <div class="address">
+            <h4>Adresimiz</h4>
+            <p>@contact.Address</p>
+            <p></p>
+        </div>
+
+    </div>
+
+    <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-telephone icon"></i>
+        <div>
+            <h4>İletişim</h4>
+            <p>
+                <strong>Telefon Num:</strong> <span>@contact.PhoneNumber</span><br>
+                <strong>Mail:</strong> <span>@contact.Email</span><br>
+            </p>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-clock icon"></i>
+        <div>
+            <h4>Açık Saatler</h4>
+            <p>
+                <strong>Paz-Cumartesi:</strong> <span>@contact.OpenHours</span><br>
+                <strong>Pazar</strong>: <span>Kapalı</span>
+            </p>
+        </div>
+    </div>
+
+}

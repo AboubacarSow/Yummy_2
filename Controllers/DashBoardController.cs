@@ -16,6 +16,10 @@ namespace Yummy_2.Controllers
             GetDashBoardData();
             return View();
         }
+        public PartialViewResult Products()
+        {
+            return PartialView(_dbContext.Products.Take(10).ToList());
+        }
 
         private void GetDashBoardData()
         {

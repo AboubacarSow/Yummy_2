@@ -1,0 +1,39 @@
+﻿@model List<Yummy_2.Models.Product>
+
+@{ 
+    int count = 0;
+}
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Ürünler
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-striped rounded-2" id="datasimpletable">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Ürün Adı</th>
+                    <th>Ürün Resmi</th>
+                    <th>İngredienler</th>
+                    <th >Fıyat</th>
+                    <th>Kategori Adı</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    count++;
+                    <tr>
+                        <th>@count</th>
+                        <td>@product.ProductName</td>
+                        <td><img src="@product.ImageUrl" style="width:70px; height:70px; border-radius:50%" /></td>
+                        <td>@product.Ingredients</td>
+                        <td>@product.Price</td>
+                        <td>@product.Category.CategoryName</td>
+                    </tr>
+               }
+             </tbody>
+            </table>
+        </div>
+    </div>

@@ -548,6 +548,17 @@
     <Content Include="Views\Testimonial\Index.cshtml" />
     <Content Include="Views\Testimonial\Create.cshtml" />
     <Content Include="Views\Testimonial\Update.cshtml" />
+    <Content Include="Views\DashBoard\Products.cshtml" />
+    <Content Include="Views\Default\Services.cshtml" />
+    <Content Include="Views\Default\NProducts.cshtml" />
+    <Content Include="Views\Default\NKategories.cshtml" />
+    <Content Include="Views\Default\NEvents.cshtml" />
+    <Content Include="Views\Default\NChefs.cshtml" />
+    <Content Include="Views\Default\DefaultTestimonials.cshtml" />
+    <Content Include="Views\Default\DefaultChefs.cshtml" />
+    <Content Include="Views\Default\DefaultGallery.cshtml" />
+    <Content Include="Views\Default\DefaultContact.cshtml" />
+    <Content Include="Views\UILayout\ContactLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

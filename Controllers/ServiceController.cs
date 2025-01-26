@@ -38,7 +38,8 @@ namespace Yummy_2.Controllers
            var model=_dbContext.Services.Find(service.ServiceId);
             model.Title = service.Title;    
             model.Description = service.Description;
-            model.Icon = service.Icon; 
+            model.Icon = service.Icon;
+            _dbContext.SaveChanges();
             return RedirectToAction("Index");
         }
         public ActionResult Delete(int id)

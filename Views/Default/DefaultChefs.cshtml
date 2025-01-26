@@ -1,0 +1,35 @@
+﻿@model List<Yummy_2.Models.Chef>
+
+<div class="container">
+
+    <div class="row gy-4">
+
+        @foreach(var chef in Model)
+         {
+            
+        <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="@chef.ImageUrl" class="img-fluid" alt="">
+                    <div class="social">
+                        @foreach(var item in chef.ChefSocials)
+                        {
+                            <a href="@item.Url"><i class="@item.Icon"></i></a>
+
+                        }
+                    </div>
+                </div>
+                <div class="member-info">
+                    <h4>@chef.FullName</h4>
+                    <span>@chef.Title</span>
+                    <p>@chef.Description</p>
+                </div>
+            </div>
+        </div>
+    <!-- End Chef Team Member -->
+         }
+
+
+    </div>
+
+</div>
