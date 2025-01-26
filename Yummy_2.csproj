@@ -194,6 +194,35 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="screenshoots\img\aboutPage.PNG" />
+    <Content Include="screenshoots\img\adminPage.PNG" />
+    <Content Include="screenshoots\img\Category.PNG" />
+    <Content Include="screenshoots\img\Cheflerimiz.PNG" />
+    <Content Include="screenshoots\img\chefPage.PNG" />
+    <Content Include="screenshoots\img\contact.PNG" />
+    <Content Include="screenshoots\img\dashboard.PNG" />
+    <Content Include="screenshoots\img\diagram1.PNG" />
+    <Content Include="screenshoots\img\Event.PNG" />
+    <Content Include="screenshoots\img\feature.PNG" />
+    <Content Include="screenshoots\img\Gallery.PNG" />
+    <Content Include="screenshoots\img\LoginPage.PNG" />
+    <Content Include="screenshoots\img\Menuler.PNG" />
+    <Content Include="screenshoots\img\Message.PNG" />
+    <Content Include="screenshoots\img\Product.PNG" />
+    <Content Include="screenshoots\img\referanslar.PNG" />
+    <Content Include="screenshoots\img\reservation.PNG" />
+    <Content Include="screenshoots\img\service.PNG" />
+    <Content Include="screenshoots\img\SocialMedia.PNG" />
+    <Content Include="screenshoots\img\Statistik.PNG" />
+    <Content Include="screenshoots\img\YummyAbout.PNG" />
+    <Content Include="screenshoots\img\YummyContact.PNG" />
+    <Content Include="screenshoots\img\YummyContactInfo.PNG" />
+    <Content Include="screenshoots\img\yummyEtkinlik.PNG" />
+    <Content Include="screenshoots\img\YummyGallery.PNG" />
+    <Content Include="screenshoots\img\YummyHizmetr.PNG" />
+    <Content Include="screenshoots\img\YummyHomePage.PNG" />
+    <Content Include="screenshoots\img\YummyRezervasyon.PNG" />
+    <Content Include="screenshoots\img\YummyTestimonial.PNG" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
